@@ -13,7 +13,7 @@ pipeline {
                 sh 'dotnet build ./src/NopCommerce.sln'
             }
         }
-        stage('build') {
+        stage('test') {
             steps{
                 dotnetPublish outputDirectory : './target/nop.zip'
                 dotnetTest project : './src/Tests',
