@@ -14,7 +14,8 @@ pipeline {
         }
         stage('test') {
             steps{
-                dotnetPublish outputDirectory : './target/nop.zip'
+                dotnetPublish project: './src/NopCommerce.sln', 
+                              outputDirectory : './target/nop.zip'
                 dotnetTest project : './src/Tests',
                            outputDirectory: './target',
                            logger: 'junit;LogFilePath=test-result.xml'
