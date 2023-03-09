@@ -15,7 +15,7 @@ pipeline {
         stage('test') {
             steps {
                 //sh 'dotnet publish ./src/NopCommerce.sln --output ./publish'
-                sh 'dotnet test ./src/Test --logger:"junit;LogFilePath=test-result.xml"'
+                sh 'dotnet test ./src/NopCommerce.sln --logger:"junit;LogFilePath=test-result.xml"'
             }
         }
         
