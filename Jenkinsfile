@@ -13,9 +13,9 @@ pipeline {
             }
         }
         stage('test') {
-            steps{
-                sh 'dotnetPublish ./src --output ./publish
-                sh "dotnetTest ./src/Test --logger: 'junit;LogFilePath=test-result.xml'"
+            steps {
+                sh 'dotnetPublish ./src --output ./publish'
+                sh 'dotnetTest ./src --logger:"junit;LogFilePath=test-result.xml"'
             }
         }
         
